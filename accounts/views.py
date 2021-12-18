@@ -42,8 +42,8 @@ class LoginAPIView(APIView):
             return Response({'token': token.key})
         return Response({'message': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
 
-class LogoutAPIView(APIView):
 
+class LogoutAPIView(APIView):
     permission_classes = [IsAuthenticated, ]
 
     def post(self, request):
