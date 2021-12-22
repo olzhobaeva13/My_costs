@@ -2,7 +2,6 @@ from django.urls import path
 from .views import CategoryListAPIView, CategoryCreateAPIView, CategoryDetailAPIView
 from spendings.views import SpendingListAPIView
 from spendings.count import CategorysTotalSumAPIView, CategoryTotalSumListAPIView, SpendingsByRangeAPIView
-from draft import DraftAPIView
 
 
 urlpatterns = [
@@ -15,7 +14,5 @@ urlpatterns = [
     path('categories/<int:category_id>/detail/', CategoryDetailAPIView.as_view()),
 
     path('categories/<int:category_id>/filter/', SpendingsByRangeAPIView.as_view()),
-
-    path('categories/<int:category_id>/list/', DraftAPIView.as_view())
 
 ]
